@@ -4,17 +4,16 @@ Lib usada para enviar comandos escpos para impressoras termicas portateis
 
 ```sh
 npm install react-native-generic-escpos-print
+
+ou 
+
+yarn add react-native-generic-escpos-print
 ```
 
 ## Usage
 
-```js
-import { multiply } from "react-native-generic-escpos-print";
-
-// ...
-
-const result = await multiply(3, 7);
-```
+O uso está em construção!
+Tem um exemplo de uso neste projeto, que também será modificado conforme vai crescendo o projeto
 
 ## Contributing
 
