@@ -24,6 +24,7 @@ import com.reactnativegenericescposprint.escpos.command.sdk.Command;
 import com.reactnativegenericescposprint.escpos.command.sdk.PrintPicture;
 import com.reactnativegenericescposprint.escpos.command.sdk.PrinterCommand;
 
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -164,10 +165,10 @@ public class RNBluetoothEscposPrinterModule extends ReactContextBaseJavaModule
                 fonttype = options.hasKey("fonttype") ? options.getInt("fonttype") : 0;
             }
             String toPrint = text;
-//            if ("UTF-8".equalsIgnoreCase(encoding)) {
-//                byte[] b = text.getBytes("UTF-8");
-//                toPrint = new String(b, Charset.forName(encoding));
-//            }
+            if ("UTF-8".equalsIgnoreCase(encoding)) {
+                byte[] b = text.getBytes("UTF-8");
+                toPrint = new String(b, Charset.forName(encoding));
+            }
 
             byte[] bytes = PrinterCommand.POS_Print_Text(toPrint, encoding, codepage, widthTimes, heigthTimes, fonttype);
             if (mService.getState() != BluetoothService.STATE_CONNECTED){
